@@ -493,5 +493,25 @@ namespace StockControl
                 dbClss.WarningIT("No Permisstion.");
             }
         }
+
+        private void btnCRRNCY_Click(object sender, EventArgs e)
+        {
+            if (StockControl.dbClss.Permisstion("", "CRRNCY", ClassLib.Classlib.User) || ClassLib.Classlib.User.ToUpper().Trim() == "ADMIN")
+            {
+                this.Cursor = Cursors.WaitCursor;
+                CRRNCY t = new CRRNCY();
+                this.Cursor = Cursors.Default;
+                t.ShowDialog();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                ClassLib.Memory.SetProcessWorkingSetSize(System.Diagnostics.Process.GetCurrentProcess().Handle, -1, -1);
+                ClassLib.Memory.Heap();
+            }
+            else
+            {
+                dbClss.WarningIT("No Permisstion.");
+            }
+        }
     }
 }

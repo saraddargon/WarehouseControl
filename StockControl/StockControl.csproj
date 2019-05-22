@@ -169,6 +169,12 @@
     <Compile Include="Process\Report\ReportConsumableBalance_Summary.Designer.cs">
       <DependentUpon>ReportConsumableBalance_Summary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Process\CRRNCY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Process\CRRNCY.Designer.cs">
+      <DependentUpon>CRRNCY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Process\Vendor_Select.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -745,6 +751,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Process\Report\ReportConsumableBalance_Summary.resx">
       <DependentUpon>ReportConsumableBalance_Summary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CRRNCY.resx">
+      <DependentUpon>CRRNCY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Process\Vendor_Select.resx">
       <DependentUpon>Vendor_Select.cs</DependentUpon>

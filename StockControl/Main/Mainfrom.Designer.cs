@@ -101,6 +101,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.radMenuItem23 = new Telerik.WinControls.UI.RadMenuItem();
+            this.btnCRRNCY = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -338,7 +340,8 @@
             this.btnPermisstion,
             this.radMenuSeparatorItem4,
             this.radMenuItem21,
-            this.radMenuItem22});
+            this.radMenuItem22,
+            this.btnCRRNCY});
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "&Administrator";
             // 
@@ -679,6 +682,19 @@
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radMenu1.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(4)))), ((int)(((byte)(129)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radMenu1.GetChildAt(0).GetChildAt(1))).ClipDrawing = false;
             // 
+            // radMenuItem23
+            // 
+            this.radMenuItem23.Image = ((System.Drawing.Image)(resources.GetObject("radMenuItem23.Image")));
+            this.radMenuItem23.Name = "radMenuItem23";
+            this.radMenuItem23.Text = "Master Type";
+            // 
+            // btnCRRNCY
+            // 
+            this.btnCRRNCY.Image = ((System.Drawing.Image)(resources.GetObject("btnCRRNCY.Image")));
+            this.btnCRRNCY.Name = "btnCRRNCY";
+            this.btnCRRNCY.Text = "CRRNCY";
+            this.btnCRRNCY.Click += new System.EventHandler(this.btnCRRNCY_Click);
+            // 
             // Mainfrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -783,5 +799,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem23;
+        private Telerik.WinControls.UI.RadMenuItem btnCRRNCY;
     }
 }

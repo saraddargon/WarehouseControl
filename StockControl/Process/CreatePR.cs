@@ -224,6 +224,7 @@ namespace StockControl
                         txtTel.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Tel);
                         txtContactName.Text = StockControl.dbClss.TSt(g.FirstOrDefault().ContactName);
                         ddlCurrency.Text = StockControl.dbClss.TSt(g.FirstOrDefault().CRRNCY);
+                        txtRate.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Rate);
                         txtFax.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Fax);
                         txtEmail.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Email);
                         txtAddress.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Address);
@@ -364,7 +365,7 @@ namespace StockControl
                 if(g.IsVisible)
                     Amount += dbClss.TDe(g.Cells["dgvAmount"].Value);
             }
-            txtTotal.Text = Amount.ToString("N2");
+            txtTotal.Text = Amount.ToString("N4");
         }
 
         private bool CheckDuplicate(string code, string Code2)

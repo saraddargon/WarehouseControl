@@ -254,6 +254,7 @@ namespace StockControl
                         txtTel.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Tel);
                         txtContactName.Text = StockControl.dbClss.TSt(g.FirstOrDefault().ContactName);
                         ddlCurrency.Text = StockControl.dbClss.TSt(g.FirstOrDefault().CRRNCY);
+                        txtRate.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Rate);
                         txtFax.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Fax);
                         txtEmail.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Email);
                         txtAddress.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Address);
@@ -3101,7 +3102,7 @@ namespace StockControl
                     //    //MessageBox.Show(ExtendedCost.ToString());
                     //}
 
-                    r2.Cells["dgvExtendedCost"].Value = Convert.ToDecimal(Math.Round(Convert.ToDecimal(UnitCost), 2, MidpointRounding.AwayFromZero));
+                    r2.Cells["dgvExtendedCost"].Value = Convert.ToDecimal(Math.Round(Convert.ToDecimal(UnitCost), 4, MidpointRounding.AwayFromZero));
                     r2.Cells["dgvAmount"].Value = ExtendedCost;
                     r2.Cells["dgvNetofTAX"].Value = ExtendedCost - PA;
 
