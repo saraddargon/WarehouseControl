@@ -336,12 +336,12 @@
             this.radMenuItem16,
             this.radMenuItem17,
             this.radMenuItem18,
+            this.btnCRRNCY,
             this.radMenuItem20,
             this.btnPermisstion,
             this.radMenuSeparatorItem4,
             this.radMenuItem21,
-            this.radMenuItem22,
-            this.btnCRRNCY});
+            this.radMenuItem22});
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "&Administrator";
             // 
@@ -692,7 +692,7 @@
             // 
             this.btnCRRNCY.Image = ((System.Drawing.Image)(resources.GetObject("btnCRRNCY.Image")));
             this.btnCRRNCY.Name = "btnCRRNCY";
-            this.btnCRRNCY.Text = "CRRNCY";
+            this.btnCRRNCY.Text = "Master CRRNCY";
             this.btnCRRNCY.Click += new System.EventHandler(this.btnCRRNCY_Click);
             // 
             // Mainfrom
