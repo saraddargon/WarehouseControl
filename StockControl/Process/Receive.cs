@@ -55,6 +55,9 @@ namespace StockControl
             dt_RCH.Columns.Add(new DataColumn("Type", typeof(string)));          
             dt_RCH.Columns.Add(new DataColumn("RCDate", typeof(DateTime)));
             dt_RCH.Columns.Add(new DataColumn("TypeReceive",typeof(string)));
+            dt_RCH.Columns.Add(new DataColumn("DeliveryNo", typeof(string)));
+            
+
 
             dt_RCD.Columns.Add(new DataColumn("CodeNo", typeof(string)));
             dt_RCD.Columns.Add(new DataColumn("ItemNo", typeof(string)));
@@ -187,7 +190,7 @@ namespace StockControl
                             txtVendorName.Text = StockControl.dbClss.TSt(g.FirstOrDefault().VendorName);
                             txtRemark.Text = StockControl.dbClss.TSt(g.FirstOrDefault().RemarkHD);
                             ddlTypeReceive.Text = StockControl.dbClss.TSt(g.FirstOrDefault().TypeReceive);
-
+                            txtDeliveryNo.Text = StockControl.dbClss.TSt(g.FirstOrDefault().DeliveryNo);
 
                             if (StockControl.dbClss.TSt(g.FirstOrDefault().Type).Equals("รับด้วยใบ Invoice"))
                             {
@@ -362,6 +365,7 @@ namespace StockControl
         {
             if (Condition.Equals("-") || Condition.Equals("New"))
             {
+                txtDeliveryNo.Enabled = ss;
                 txtDocNo.Enabled = ss;
                 //txtVendorName.Enabled = ss;
                 //txtRCNo.Enabled = ss;
@@ -376,6 +380,7 @@ namespace StockControl
             }
             else if (Condition.Equals("View"))
             {
+                txtDeliveryNo.Enabled = ss;
                 txtDocNo.Enabled = ss;
                 //txtVendorName.Enabled = ss;
                 //txtRCNo.Enabled = ss;
@@ -389,6 +394,7 @@ namespace StockControl
             
             else if (Condition.Equals("Edit"))
             {
+                txtDeliveryNo.Enabled = ss;
                 txtDocNo.Enabled = ss;
                 //txtVendorName.Enabled = ss;
                 //txtRCNo.Enabled = ss;
@@ -443,6 +449,9 @@ namespace StockControl
                 //    err += " “รหัสพาร์ท:” เป็นค่าว่าง \n";
                 //if (txtRCNo.Text.Equals(""))
                 //    err += " “เลขที่รับสินค้า:” เป็นค่าว่าง \n";
+                if (txtDeliveryNo.Text.Equals(""))
+                    err += "- “Delivery No:” เป็นค่าว่าง \n";
+
                 if (txtVendorNo.Text.Equals(""))
                     err += "- “ผู้ขาย:” เป็นค่าว่าง \n";
                 //if (txtVendorNo.Text.Equals(""))
@@ -530,6 +539,11 @@ namespace StockControl
                         //if (StockControl.dbClss.TSt(gg.Barcode).Equals(""))
                         //    gg.Barcode = StockControl.dbClss.SaveQRCode2D(txtRCNo.Text.Trim());
 
+                        if (!txtDeliveryNo.Text.Trim().Equals(row["DeliveryNo"].ToString()))
+                        {
+                            gg.DeliveryNo = txtDeliveryNo.Text.Trim();
+                            dbClss.AddHistory(this.Name, "แก้ไข Receive", "แก้ไข DeliveryNo[" + txtDeliveryNo.Text.Trim() + " เดิม :" + row["DeliveryNo"].ToString() + "]", txtRCNo.Text.Trim());
+                        }
                         if (!txtVendorNo.Text.Trim().Equals(row["VendorNo"].ToString()))
                         {
                             gg.VendorName = txtVendorName.Text;
@@ -608,6 +622,7 @@ namespace StockControl
                     tb_ReceiveH gg = new tb_ReceiveH();
                     gg.RCNo = txtRCNo.Text;
                     gg.RCDate = RequireDate;
+                    gg.DeliveryNo = txtDeliveryNo.Text.Trim();
                     gg.UpdateBy = null;
                     gg.UpdateDate = UpdateDate;
                     gg.CreateBy = ClassLib.Classlib.User;

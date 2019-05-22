@@ -481,6 +481,7 @@ namespace StockControl
                             tb_ReceiveH_Del gg = new tb_ReceiveH_Del();
                             gg.RCNo = g.FirstOrDefault().RCNo;
                             gg.RCDate = g.FirstOrDefault().RCDate;
+                            gg.DeliveryNo = g.FirstOrDefault().DeliveryNo;
                             gg.UpdateBy = g.FirstOrDefault().UpdateBy;
                             gg.UpdateDate = g.FirstOrDefault().UpdateDate;
                             gg.CreateBy = g.FirstOrDefault().CreateBy;
