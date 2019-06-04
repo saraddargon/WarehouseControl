@@ -82,8 +82,8 @@ namespace StockControl
             dt_POHD.Columns.Add(new DataColumn("VatDetail", typeof(decimal)));
             dt_POHD.Columns.Add(new DataColumn("GrandTotal", typeof(decimal)));
             dt_POHD.Columns.Add(new DataColumn("id", typeof(int)));
-            dt_POHD.Columns.Add(new DataColumn("Terms_of_Payment", typeof(string)));
-            
+
+
             dt_PODT.Columns.Add(new DataColumn("id", typeof(string)));
             dt_PODT.Columns.Add(new DataColumn("TempPNo", typeof(string)));
             dt_PODT.Columns.Add(new DataColumn("PONo", typeof(string)));
@@ -261,7 +261,6 @@ namespace StockControl
                         txtRemarkHD.Text = StockControl.dbClss.TSt(g.FirstOrDefault().Remark);
                         cbClearBill.Checked = StockControl.dbClss.TBo(g.FirstOrDefault().ClearBill);
                         txtQuotation.Text = dbClss.TSt(g.FirstOrDefault().Quotation);
-                        txtTerms_of_Payment.Text = dbClss.TSt(g.FirstOrDefault().Terms_of_Payment);
 
                         txtVattax.Text = StockControl.dbClss.TInt(g.FirstOrDefault().VatTax).ToString("##,###,##0.00");
                         lbTotalOrder.Text = StockControl.dbClss.TDe(g.FirstOrDefault().GrandTotal).ToString("##,###,##0.00");
@@ -599,7 +598,6 @@ namespace StockControl
                         gg.GrandTotal = StockControl.dbClss.TDe(lbTotalOrder.Text);
                         gg.Usefixunit = StockControl.dbClss.TBo(cbUsefixunit.Checked);
                         gg.CHStatus = "Waiting";
-                        gg.Terms_of_Payment = txtTerms_of_Payment.Text;
 
                         if (!dtDuedate.Text.Trim().Equals(""))
                         {
@@ -669,7 +667,6 @@ namespace StockControl
                     gg.Discpct = StockControl.dbClss.TDe(txtLessPoDiscountAmountPersen.Text);                    
                     gg.VatTax = StockControl.dbClss.TDe(txtVattax.Text);
                     gg.Usefixunit = StockControl.dbClss.TBo(cbUsefixunit.Checked);
-                    gg.Terms_of_Payment = txtTerms_of_Payment.Text;
 
                     DateTime? Duedate = Convert.ToDateTime(DateTime.Now, new CultureInfo("en-US"));
                     if (!dtDuedate.Text.Equals(""))
@@ -978,7 +975,6 @@ namespace StockControl
                 cbvat.Enabled = ss;
                 cbvatDetail.Enabled = ss;
                 txtVattax.Enabled = ss;
-                txtTerms_of_Payment.Enabled= ss;
             }
             else if (Condition.Equals("View"))
             {
@@ -1004,7 +1000,6 @@ namespace StockControl
                 cbvat.Enabled = ss;
                 cbvatDetail.Enabled = ss;
                 txtVattax.Enabled = ss;
-                txtTerms_of_Payment.Enabled = ss;
             }
             else if (Condition.Equals("Edit"))
             {
@@ -1030,7 +1025,6 @@ namespace StockControl
                 cbvat.Enabled = ss;
                 cbvatDetail.Enabled = ss;
                 txtVattax.Enabled = ss;
-                txtTerms_of_Payment.Enabled = ss;
             }
         }
        
@@ -1066,7 +1060,6 @@ namespace StockControl
             txtVattax.Text = "7";
             cbvatDetail.Checked = false;
             txtQuotation.Text = "";
-            txtTerms_of_Payment.Text = "30 days after delivery date";
 
             dt_POHD.Rows.Clear();
             dt_PODT.Rows.Clear();

@@ -175,8 +175,6 @@
             this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonBarGroup7 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement2 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radLabel33 = new Telerik.WinControls.UI.RadLabel();
-            this.txtTerms_of_Payment = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -259,8 +257,6 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTerms_of_Payment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -894,8 +890,6 @@
             // 
             // pnFootter
             // 
-            this.pnFootter.Controls.Add(this.txtTerms_of_Payment);
-            this.pnFootter.Controls.Add(this.radLabel33);
             this.pnFootter.Controls.Add(this.btnCal);
             this.pnFootter.Controls.Add(this.cbvat);
             this.pnFootter.Controls.Add(this.cbUsefixunit);
@@ -1793,24 +1787,6 @@
             this.radButtonElement2.Text = "รายการ";
             this.radButtonElement2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // radLabel33
-            // 
-            this.radLabel33.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel33.Location = new System.Drawing.Point(42, 76);
-            this.radLabel33.Name = "radLabel33";
-            this.radLabel33.Size = new System.Drawing.Size(105, 17);
-            this.radLabel33.TabIndex = 19;
-            this.radLabel33.Text = "Terms of Payment :";
-            // 
-            // txtTerms_of_Payment
-            // 
-            this.txtTerms_of_Payment.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTerms_of_Payment.Location = new System.Drawing.Point(153, 78);
-            this.txtTerms_of_Payment.MaxLength = 50;
-            this.txtTerms_of_Payment.Name = "txtTerms_of_Payment";
-            this.txtTerms_of_Payment.Size = new System.Drawing.Size(227, 19);
-            this.txtTerms_of_Payment.TabIndex = 20;
-            // 
             // CreatePO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1918,8 +1894,6 @@
             this.radGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lblStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTerms_of_Payment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2045,7 +2019,5 @@
         private Telerik.WinControls.UI.RadLabel radLabel31;
         private Telerik.WinControls.UI.RadDropDownList ddlFactory;
         private Telerik.WinControls.UI.RadLabel radLabel32;
-        private Telerik.WinControls.UI.RadTextBox txtTerms_of_Payment;
-        private Telerik.WinControls.UI.RadLabel radLabel33;
     }
 }
